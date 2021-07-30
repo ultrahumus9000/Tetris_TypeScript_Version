@@ -2,7 +2,9 @@
   font-family: sans-serif;
   margin: 0px;
   padding: 0px;
+  box-sizing: border-box;
 }
+
 .mode {
   border: none;
   color: black;
@@ -17,16 +19,14 @@ aside .Dark {
   background: linear-gradient(45deg, teal, coral);
 }
 .App {
-  height: 100vh;
   background: url("light-mode.jpeg");
   background-size: 180vw;
-  padding: 50px;
   display: grid;
+  padding: 30px;
   grid-template:
-    "aside board right" 100vh/
+    "aside board right" 1fr/
     2fr 3fr 1fr;
   gap: 30px;
-  height: 100vh;
 }
 
 .Dark {
@@ -90,6 +90,7 @@ aside {
   display: grid;
   width: 30vw;
   justify-content: center;
+  margin: 20px;
   padding: 30px;
   padding-bottom: 50px;
   border-radius: 10px;

@@ -6,7 +6,10 @@ type MiniProps = {
   miniBoardX: number;
   miniBoardY: number;
 };
-const colors: any = {
+type Colors = {
+  [key: string]: string;
+};
+const colors: Colors = {
   "1": "white",
   "2": "pink",
   "3": "cyan",

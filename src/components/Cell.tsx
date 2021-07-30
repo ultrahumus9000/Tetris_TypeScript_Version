@@ -13,15 +13,10 @@ export type CellProps = {
   boardX: number;
   boardY: number;
 };
-const colors: {
-  1: string;
-  2: string;
-  3: string;
-  4: string;
-  5: string;
-  6: string;
-  7: string;
-} = {
+type Colors = {
+  [key: string]: string;
+};
+const colors: Colors = {
   1: "white",
   2: "pink",
   3: "cyan",
