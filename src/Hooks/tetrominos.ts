@@ -1,16 +1,16 @@
 export function randomTetriminos() {
   const tetriminos = [
     {
-      shape: [[1], [1], [1], [1]],
+      shape: [["1"], ["1"], ["1"], ["1"]],
       x: 0,
       y: 0,
       color: "white",
     },
     {
       shape: [
-        ["", 2],
-        ["", 2],
-        [2, 2],
+        ["", "2"],
+        ["", "2"],
+        ["2", "2"],
       ],
       x: 0,
       y: 0,
@@ -18,9 +18,9 @@ export function randomTetriminos() {
     },
     {
       shape: [
-        [3, ""],
-        [3, ""],
-        [3, 3],
+        ["3", ""],
+        ["3", ""],
+        ["3", "3"],
       ],
       x: 0,
       y: 0,
@@ -28,8 +28,8 @@ export function randomTetriminos() {
     },
     {
       shape: [
-        [4, 4],
-        [4, 4],
+        ["4", "4"],
+        ["4", "4"],
       ],
       x: 0,
       y: 0,
@@ -37,8 +37,8 @@ export function randomTetriminos() {
     },
     {
       shape: [
-        ["", 5, 5],
-        [5, 5, ""],
+        ["", "5", "5"],
+        ["5", "5", ""],
       ],
       x: 0,
       y: 0,
@@ -46,8 +46,8 @@ export function randomTetriminos() {
     },
     {
       shape: [
-        [6, 6, ""],
-        ["", 6, 6],
+        ["6", "6", ""],
+        ["", "6", "6"],
       ],
       x: 0,
       y: 0,
@@ -55,8 +55,8 @@ export function randomTetriminos() {
     },
     {
       shape: [
-        [7, 7, 7],
-        ["", 7, ""],
+        ["7", "7", "7"],
+        ["", "7", ""],
       ],
       x: 0,
       y: 0,

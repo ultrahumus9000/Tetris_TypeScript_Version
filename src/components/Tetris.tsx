@@ -1,4 +1,4 @@
-import React from "react";
+import React, { SyntheticEvent } from "react";
 import { useCallback, useEffect, useState } from "react";
 
 import createGrids from "../helper";
@@ -195,9 +195,10 @@ export default function GameStart() {
     setPaused(false);
   }
 
-  function movePiece(e) {
+  function movePiece(e: SyntheticEvent) {
+    let targetEvent = e.target as HTMLButtonElement;
     if (!gameOver && !paused) {
-      if (e.target.value === "left") {
+      if (targetEvent.value === "left") {
         if (music) {
           const pressMusic = new Audio("../../press.mp3");
           pressMusic.volume = 0.3;
@@ -205,7 +206,7 @@ export default function GameStart() {
         }
         updatePiecePos(-1, 0);
       }
-      if (e.target.value === "right") {
+      if (targetEvent.value === "right") {
         if (music) {
           const pressMusic = new Audio("../../press.mp3");
           pressMusic.play();
@@ -213,7 +214,7 @@ export default function GameStart() {
         }
         updatePiecePos(1, 0);
       }
-      if (e.target.value === "down") {
+      if (targetEvent.value === "down") {
         if (music) {
           const pressMusic = new Audio("../../press.mp3");
           pressMusic.play();
@@ -250,7 +251,7 @@ export default function GameStart() {
     return;
   }
 
-  function moveKey(e) {
+  function moveKey(e: { key: string }) {
     console.log("move key", e);
     if (!gameOver && !paused) {
       if (e.key === "ArrowLeft") {
@@ -324,7 +325,6 @@ export default function GameStart() {
                   nextPiece={nextPiece}
                   miniBoardX={x}
                   miniBoardY={y}
-                  className="cell"
                 />
               ));
             })}

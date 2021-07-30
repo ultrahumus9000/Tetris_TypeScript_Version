@@ -1,6 +1,27 @@
 import React from "react";
 
-const colors = {
+type SingleCell = (string | number)[];
+export type Piece = {
+  shape: SingleCell[];
+  x: number;
+  y: number;
+  color: string;
+};
+export type CellProps = {
+  color: string;
+  piece: Piece;
+  boardX: number;
+  boardY: number;
+};
+const colors: {
+  1: string;
+  2: string;
+  3: string;
+  4: string;
+  5: string;
+  6: string;
+  7: string;
+} = {
   1: "white",
   2: "pink",
   3: "cyan",
@@ -9,7 +30,7 @@ const colors = {
   6: "green",
   7: "purple",
 };
-export default function Cell({ color, piece, boardX, boardY }) {
+export default function Cell({ color, piece, boardX, boardY }: CellProps) {
   let cellColor = colors[color];
 
   //   if (piece.x === boardX && piece.y === boardY) {

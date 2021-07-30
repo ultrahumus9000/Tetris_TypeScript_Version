@@ -1,15 +1,27 @@
 import React from "react";
-
-const colors = {
-  1: "white",
-  2: "pink",
-  3: "cyan",
-  4: "yellow",
-  5: "red",
-  6: "green",
-  7: "purple",
+import { Piece } from "./Cell";
+type MiniProps = {
+  color: string;
+  nextPiece: Piece;
+  miniBoardX: number;
+  miniBoardY: number;
 };
-export default function MiniCell({ color, nextPiece, miniBoardX, miniBoardY }) {
+const colors: any = {
+  "1": "white",
+  "2": "pink",
+  "3": "cyan",
+  "4": "yellow",
+  "5": "red",
+  "6": "green",
+  "7": "purple",
+  "": "black",
+};
+export default function MiniCell({
+  color,
+  nextPiece,
+  miniBoardX,
+  miniBoardY,
+}: MiniProps) {
   let cellColor = colors[color];
 
   //   if (piece.x === boardX && piece.y === boardY) {
