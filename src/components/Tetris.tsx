@@ -1,3 +1,4 @@
+import React from "react";
 import { useCallback, useEffect, useState } from "react";
 
 import createGrids from "../helper";
@@ -60,7 +61,7 @@ export default function GameStart() {
         }
       }
     }
-    if (newBoard[0].some((ele) => ele !== "")) {
+    if (newBoard[0].some((ele: string | number) => ele !== "")) {
       stopGame();
       postRecord(count);
       if (music) {
@@ -71,7 +72,9 @@ export default function GameStart() {
       return;
     }
 
-    newBoard = newBoard.filter((row) => row.some((cell) => cell === ""));
+    newBoard = newBoard.filter((row: (boolean | string)[]) =>
+      row.some((cell) => cell === "")
+    );
     let gap = board.length - newBoard.length;
     for (let i = 0; i < gap; i++) {
       newBoard.unshift(Array(12).fill(""));
@@ -81,7 +84,7 @@ export default function GameStart() {
         gameOverMusic.play();
       }
     }
-    let rowCount = newBoard.filter((row) =>
+    let rowCount = newBoard.filter((row: (boolean | string)[]) =>
       row.every((cell) => cell === "")
     ).length;
 

@@ -1,6 +1,11 @@
 import create from "zustand";
 
-const useSwitch = create((set, get) => ({
+type Mode = {
+  mode: string;
+  toggleMode: () => void;
+};
+
+const useSwitch = create<Mode>((set, get) => ({
   mode: "Light",
   toggleMode: () => set({ mode: get().mode === "Light" ? "Dark" : "Light" }),
 }));

@@ -1,3 +1,4 @@
+import React from "react";
 import useSwitch from "../Hooks/mode";
 import { useMusic } from "../Hooks/music";
 

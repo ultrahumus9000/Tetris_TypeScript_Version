@@ -1,6 +1,15 @@
 import create from "zustand";
 
-export const useGameHistory = create((set, get) => ({
+export type Score = {
+  id: number;
+  history: number;
+};
+type History = {
+  history: Score[];
+  fetchHistory: () => void;
+};
+
+export const useGameHistory = create<History>((set, get) => ({
   history: [],
   fetchHistory: () => {
     fetch(" http://localhost:4000/score")

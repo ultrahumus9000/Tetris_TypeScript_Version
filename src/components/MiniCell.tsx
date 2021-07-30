@@ -1,3 +1,5 @@
+import React from "react";
+
 const colors = {
   1: "white",
   2: "pink",

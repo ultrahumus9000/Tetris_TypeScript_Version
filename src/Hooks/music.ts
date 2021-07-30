@@ -1,6 +1,12 @@
 import create from "zustand";
 
-export const useMusic = create((set, get) => ({
+type Music = {
+  music: boolean;
+  playMusic: () => void;
+  stopMusic: () => void;
+};
+
+export const useMusic = create<Music>((set, get) => ({
   music: false,
   playMusic: () => {
     set({ music: true });
